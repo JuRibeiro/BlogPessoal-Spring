@@ -10,6 +10,7 @@ import com.generation.blogPessoal.model.PostagemModel;
 @Repository
 public interface PostagemRepository extends JpaRepository<PostagemModel, Long>
 {
+	//interface é um contrato
 	//Repository – classe responsável pela comunicação com o banco de dados 
 	//(manipulação de dados); (select)
 	
