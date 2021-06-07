@@ -17,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 
 @Entity
-@Table (name="postagem")
+@Table (name="tb_postagem")
 //table java, dentro do banco de dados, vai virar uma tabela (tabela postagens)
 
 public class PostagemModel 
