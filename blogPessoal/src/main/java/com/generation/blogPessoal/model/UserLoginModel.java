@@ -2,6 +2,8 @@ package com.generation.blogPessoal.model;
 
 public class UserLoginModel 
 {
+	//isso aqui não é uma tabela , padrão DTO: transportar dados para o postman
+	
 	//atributos
 	private String nome;
 	

@@ -25,8 +25,8 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter
 		auth.userDetailsService(userDetailService);
 	}
 	
-	//
-	@Bean
+	//anotação mais basica do Spring, um metodo produz um bean para ser gerenciado pelo Spring
+	@Bean 
 	public PasswordEncoder passwordEncoder ()
 	{
 		return new BCryptPasswordEncoder ();
@@ -37,14 +37,17 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter
 	{
 		http.authorizeRequests()
 		.antMatchers("/usuarios/logar").permitAll()
-		.antMatchers("/usuarios/cadastar").permitAll()
+		.antMatchers("/usuarios/cadastrar").permitAll()
+		.antMatchers("/tema").permitAll() //fiz pra testar 
 		.anyRequest().authenticated()
 		.and().httpBasic()
 		.and().sessionManagement()
+		// não guarda sessao, nem dados privados
 		.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 		.and().cors()
-		//cors , o que é ? 
+		//cors , o que é ?  configurar acesso externo, quem pode acessar , o que pode acessar
 		.and().csrf().disable();
+		//csrf: prevenção de ataque hacker
 	}
 
 }

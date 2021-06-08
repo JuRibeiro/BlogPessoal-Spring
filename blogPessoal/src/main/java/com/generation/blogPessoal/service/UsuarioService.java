@@ -13,7 +13,7 @@ import com.generation.blogPessoal.model.UsuarioModel;
 import com.generation.blogPessoal.repository.UsuarioRepository;
 
 @Service
-
+//regra de negocio
 public class UsuarioService 
 {
 	@Autowired
@@ -35,23 +35,33 @@ public class UsuarioService
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		
 		Optional<UsuarioModel> usuario = repository.findByUsuario(user.get().getUsuario());
-		
+		//verifica se o usuario ja existe no banco de dados
+		//usuario banco de dados
 		if (usuario.isPresent())
 		{
+			//user json
 			if (encoder.matches(user.get().getSenha(), usuario.get().getSenha()))
 			{
+				//token criado aqui
+				//pega a string e transforma em bytes
 				String auth = user.get().getUsuario() + ":" + user.get().getSenha();
-				byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US - ASCII")));
+				byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
 				
+				//token completo
 				String authHeader = "Basic " + new String (encodedAuth);
 				
+				//token completo
 				user.get().setToken(authHeader);
+				//usuario banco de dados
 				user.get().setNome(usuario.get().getNome());
+				
 				
 				return user;
 			}
 		}
 		
-		return null;
+		//return null;
+		return Optional.empty();
+		
 	}
 }

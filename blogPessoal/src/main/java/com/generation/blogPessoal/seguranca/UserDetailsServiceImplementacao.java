@@ -18,13 +18,18 @@ public class UserDetailsServiceImplementacao implements UserDetailsService
 	@Autowired
 	private UsuarioRepository userRepository;
 	
+	                                                       //throws ? tipos de exceção
 	@Override
 	public UserDetails loadUserByUsername (String userName) throws UsernameNotFoundException
 	{
+		// |    |  
 		Optional<UsuarioModel> user = userRepository.findByUsuario(userName);
 		
 		user.orElseThrow(()-> new UsernameNotFoundException(userName + "not found.") );
 		
-		return user.map(UserDetailsImplementacao::new).get();
+		//sempre que for chamar algum metodo que recebe ele mesmo como parametro, da pra fazer assim
+		return user.map(UserDetailsImplementacao::new).get(); //method reference :: variação da expressão lambda
+		
+		//return user.map (user -> new UserDetailsImplementacao(user)).get();
 	}
 }
