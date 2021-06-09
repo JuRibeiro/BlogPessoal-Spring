@@ -31,5 +31,6 @@ public class UserDetailsServiceImplementacao implements UserDetailsService
 		return user.map(UserDetailsImplementacao::new).get(); //method reference :: variação da expressão lambda
 		
 		//return user.map (user -> new UserDetailsImplementacao(user)).get();
+		//security
 	}
 }

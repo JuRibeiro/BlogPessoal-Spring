@@ -49,5 +49,6 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter
 		.and().csrf().disable();
 		//csrf: prevenção de ataque hacker
 	}
+	//security
 
 }

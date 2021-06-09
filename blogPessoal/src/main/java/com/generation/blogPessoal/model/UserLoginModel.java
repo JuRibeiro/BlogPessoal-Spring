@@ -46,5 +46,6 @@ public class UserLoginModel
 		this.token = token;
 	}
 	
+	//security
 
 }
