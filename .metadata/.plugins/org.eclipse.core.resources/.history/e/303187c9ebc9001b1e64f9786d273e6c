@@ -1,0 +1,5 @@
+package com.generation.redeSocialG2.security;
+
+public class UserDetailsServiceImplements {
+
+}

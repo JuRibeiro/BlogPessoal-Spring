@@ -1,0 +1,10 @@
+package com.generation.redeSocialG2.security;
+
+import org.springframework.security.core.userdetails.UserDetails;
+//implements - interface 
+//extends - classe
+public class UserDetailsImplements implements UserDetails
+{
+	
+
+}

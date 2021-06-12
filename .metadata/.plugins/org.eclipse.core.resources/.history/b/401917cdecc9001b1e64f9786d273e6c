@@ -1,0 +1,5 @@
+package com.generation.redeSocialG2.model;
+
+public class UserLoginModel {
+
+}

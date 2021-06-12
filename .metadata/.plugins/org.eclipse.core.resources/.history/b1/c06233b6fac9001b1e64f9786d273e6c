@@ -1,0 +1,53 @@
+package com.generation.redeSocialG2.model;
+
+
+
+public class UserLoginModel 
+{
+	//atributos 
+	
+	//Aqui n colocamos annotation @NotNull porque devolvemos dados ao usuario ja armazenados.
+	private String nomeCompleto;
+	
+	private String email;
+	
+	private String senha;
+	
+	private String token;
+	
+	//encapsulamento
+	public String getNome() {
+		return nomeCompleto;
+	}
+
+	public void setNome(String nome) {
+		this.nomeCompleto = nome;
+	}
+
+	public String getUsuario() {
+		return email;
+	}
+
+	public void setUsuario(String usuario) {
+		this.email = usuario;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+	public String getToken() {
+		return token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+	}
+	
+	
+	
+}

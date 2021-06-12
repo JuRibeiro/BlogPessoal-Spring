@@ -1,0 +1,5 @@
+package com.revisao.revisao.security;
+
+public class BasicSecurityConfig {
+
+}
